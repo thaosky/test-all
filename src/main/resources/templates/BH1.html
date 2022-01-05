@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BH1</title>
+</head>
+<body>
+<p>Dear Sir/Madam,</p>
+<p>Related to application with the information below:</p>
+<br/>
+<p>- Customer: <b>[[${emailModel.customerName}]]</b></p>
+<p>- Customer segment: <b>[[${emailModel.segment}]]</b></p>
+<p>- Application ID: <b>[[${emailModel.loanId}]]</b></p>
+<p>- Loan purpose: <b>[[${emailModel.loanPurpose}]]</b>. <b>[[${emailModel.purposeDescription}]]</b></p>
+<p>- Loan amount: <b>[[${emailModel.loanAmount}]]</b><b>[[${emailModel.currency}]]</b></p>
+<br/>
+<p>RM <b>[[${emailModel.username}]]</b> has completed the Proposal Report.</p>
+<p>Please access BPM system to process the application</p>
+<br/>
+<p>Regards,</p>
+<br/>
+<p>Note: This is an automatic message, please do not reply.</p>
+</body>
+</html>
