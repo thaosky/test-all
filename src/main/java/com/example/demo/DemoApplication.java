@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.annotation.NameOfClassProcessor;
-import com.example.demo.dto.Person;
+import com.example.demo.model.Person;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
