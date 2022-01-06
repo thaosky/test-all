@@ -1,11 +1,12 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Todo;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.demo.dto.TodoDTO;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -21,10 +22,22 @@ public class TodoController {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/todo/{todoId}")
+    @GetMapping("/todos/{todoId}")
     public Todo getTodo(@PathVariable(name = "todoId") Integer todoId) {
         return todoList.get(todoId);
     }
 
 
+    /**
+     * Cách validate:
+     * - B1: Đánh dấu cột cần validate
+     * - B2: @Valid
+     * - B3: Xử lý exception
+     */
+    @PostMapping("/todos")
+    @ResponseStatus(HttpStatus.CREATED)
+    public TodoDTO createTodo(@RequestBody @Valid TodoDTO todo) {
+//        todoList.add(new Todo(todo.getTitle(), todo.getDetail()));
+        return todo;
+    }
 }
